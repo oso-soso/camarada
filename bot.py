@@ -257,7 +257,7 @@ async def mute(ctx, target_user:discord.User):
                     await channel.set_permissions(muted_role, read_messages=True, send_messages=False, add_reactions=False)
 
                 elif type(channel) is discord.VoiceChannel:
-                    await channel.set_permissions(muted_role, connect=False)
+                    await channel.set_permissions(muted_role, speak=False)
 
             # Give role to member
             await ctx.guild.get_member(target_user.id).add_roles(muted_role)
